@@ -1,31 +1,35 @@
-import { BoxSide } from "../../Styles/SideButSTyled"
+import { BoxSide, StyledButton, GoldDisplay } from "../../Styles/SideButSTyled";
+import { MdBlock } from "react-icons/md";
+import { useGoldStore } from "../../Store/Store";
 
 interface SideProps {
-    handlerChangeStatus : () => void;
+  handlerChangeStatus: () => void;
 }
-//botões lateias do menus
-export default function SideButton({handlerChangeStatus}: SideProps){
-    return(
-        <BoxSide>
-            <div>
-                <button onClick={handlerChangeStatus}>Type 1</button>
-            </div>
-            <div>
-                <button onClick={handlerChangeStatus}>Type 2</button>
-            </div>
-            <div>
-                <button>Type 3</button>
-            </div>
-            <div>
-                <button>Type 4</button>
-            </div>
-            <div>
-                <button>Type 5</button>
-            </div>
-            <div>
-                <button>Type 6</button>
-            </div>
 
-        </BoxSide>
-    )
+export default function SideButton({ handlerChangeStatus }: SideProps) {
+  const gold = useGoldStore((state) => state.gold);
+
+  return (
+    <BoxSide>
+      <GoldDisplay>Gold: {gold}</GoldDisplay>
+      <div>
+        <StyledButton onClick={handlerChangeStatus}>Type 1</StyledButton>
+      </div>
+      <div>
+        <StyledButton onClick={handlerChangeStatus}>Type 2</StyledButton>
+      </div>
+      <div>
+        <StyledButton>{gold >= 20 ? "Type 3" : <MdBlock />}</StyledButton>
+      </div>
+      <div>
+        <StyledButton>Type 4</StyledButton>
+      </div>
+      <div>
+        <StyledButton>Type 5</StyledButton>
+      </div>
+      <div>
+        <StyledButton>Type 6</StyledButton>
+      </div>
+    </BoxSide>
+  );
 }

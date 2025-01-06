@@ -1,38 +1,23 @@
-import { useState } from "react";
-import { BoxMain, Cards, BoxLife, BarLife,StyledTitle } from "../../Styles/GoldSystemStyled";
-//Função para clicar e habilitar comprar
-export default function GoldSys() {
-    const [point, setPoint] = useState(0); // Inicia vazio
-    const [statusPoint, setStatusPoint] = useState(false)
-    const hashPoint = () => {
-        if (point < 100) {
-            setPoint(point + 1); // Aumenta 1% a cada clique
-        }
-        if (point >= 20){
-            setStatusPoint(true)
-        }
-    };
+import { BoxMain, Cards, StyledTitle, GoldDisplay, StyledButton } from "../../Styles/GoldSystemStyled";
+import { useGoldStore } from "../../Store/Store";
 
-    return (
-        <>
-            <BoxMain>
-                <Cards>
-                    <div>
-                      {/*   {statusPoint ?<StyledTitle isActive={statusPoint}>Gold System</StyledTitle> : <h2>Gold System</h2> } */}
-                      <StyledTitle isActive={statusPoint}>Gold System</StyledTitle>
-                    </div>
-                    <div>
-                        <BoxLife>
-                            <BarLife width={point} />
-                        </BoxLife>
-                        <h1>Points: {point}%</h1>
-                        <h3>status : {statusPoint.toString()}</h3>
-                    </div>
-                    <div>
-                        <button onClick={hashPoint}>Click Here</button>
-                    </div>
-                </Cards>
-            </BoxMain>
-        </>
-    );
+export default function GoldSys() {
+  const gold = useGoldStore((state) => state.gold);
+  const incrementGold = useGoldStore((state) => state.incrementGold);
+
+  const hashPoint = () => {
+    incrementGold();
+  };
+
+  return (
+    <BoxMain>
+      <Cards>
+        <StyledTitle isActive={gold >= 20}>Gold System</StyledTitle>
+        {/* <StyledTitle isActive={statusPoint}>Gold System</StyledTitle> */} {/* mudança de cor após liberado (20 pontos +) */}
+        <GoldDisplay>Gold: {gold}</GoldDisplay>
+        <StyledButton onClick={hashPoint}>Earn Gold</StyledButton>
+      </Cards>
+    </BoxMain>
+  );
 }
+
