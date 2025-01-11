@@ -1,6 +1,5 @@
 import { BoxMain, Cards, StyledTitle, GoldDisplay, StyledButton } from "../../Styles/GoldSystemStyled";
 import { useGoldStore } from "../../Store/Store";
-
 export default function GoldSys() {
   const gold = useGoldStore((state) => state.gold);
   const incrementGold = useGoldStore((state) => state.incrementGold);

@@ -7,7 +7,6 @@ const BaseCard = styled.div`
     border-radius:0.8rem;
 `
 export const CardBoxOne = styled(BaseCard)`
-    background-color: rgb();
     backdrop-filter: blur(7px) saturate(0%);
     -webkit-backdrop-filter: blur(7px) saturate(0%);
     background-color: rgba(128, 0, 128, 0.3);

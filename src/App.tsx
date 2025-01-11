@@ -1,12 +1,12 @@
 
-import Menu from './Pages/MenuGame/Menu';
+import Routers from "./Routes/Routers"
 function App() {
 
 
   return (
     <>
-     {/*  <Main /> */}
-     <Menu></Menu>
+     {/* <Menu></Menu> */}
+     <Routers />
     </>
   )
 }

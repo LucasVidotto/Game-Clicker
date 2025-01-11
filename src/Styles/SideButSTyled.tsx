@@ -1,16 +1,21 @@
 import styled from "styled-components";
 
-export const BoxSide = styled.div`
+export const BoxSide = styled.div<{statusGold : boolean}>`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   width: 10rem;
-  height: 20rem;
+  height: 34rem;
   background: linear-gradient(145deg, #2d2d2d, #3e3e3e);
   border-radius: 1rem;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4), -4px -4px 10px rgba(255, 255, 255, 0.1);
   padding: 1rem;
+  & > div{
+    &:nth-child(1):hover{
+      background: ${(props) => (props.statusGold ? "" : "linear-gradient(145deg, #e71e07, #620906);")}
+    }
+  }
 `;
 
 export const StyledButton = styled.button`
@@ -20,7 +25,7 @@ export const StyledButton = styled.button`
   font-size: 1rem;
   border: none;
   border-radius: 0.5rem;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1.9rem; //tamanho do card Type
   cursor: pointer;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3), -2px -2px 6px rgba(255, 255, 255, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -28,7 +33,10 @@ export const StyledButton = styled.button`
   &:hover {
     transform: scale(1.1);
     box-shadow: 4px 4px 10px rgba(255, 204, 0, 0.6);
+
+    
   }
+ 
 
   &:active {
     transform: scale(1.05);

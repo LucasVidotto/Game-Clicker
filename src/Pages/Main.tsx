@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { BoxMain, Cards, BoxLife, BarLife } from "../Styles/MainStyled";
-//Por enquanto Systema para validar click com barra de vida (sistema de bater e descer a vida)
+import { BoxMain, Cards, BoxLife, BarLife, StyledButton, StyledTitle } from "../Styles/MainStyled";
+
 export default function Main() {
-    const [point, setPoint] = useState(0); // Inicia vazio
+    const [point, setPoint] = useState(0); // Estado para pontos
 
     const hashPoint = () => {
         if (point < 100) {
@@ -11,20 +11,21 @@ export default function Main() {
     };
 
     return (
-        <>
-            <BoxMain>
-                <Cards>
-                    <div>
-                        <BoxLife>
-                            <BarLife width={point} />
-                        </BoxLife>
-                        <h1>Points: {point}%</h1>
-                    </div>
-                    <div>
-                        <button onClick={hashPoint}>Click Here</button>
-                    </div>
-                </Cards>
-            </BoxMain>
-        </>
+        <BoxMain>
+            <Cards>
+                {point == 100 ? 
+                    <StyledTitle isActive={point >= 100}>Complete</StyledTitle> :
+                    <StyledTitle isActive={point >= 100}>Bar Life System</StyledTitle>}
+                <div>
+                    <BoxLife>
+                        <BarLife width={point} />
+                    </BoxLife>
+                    <h1>Points: {point}%</h1>
+                </div>
+                <div>
+                    <StyledButton onClick={hashPoint}>Click Here</StyledButton>
+                </div>
+            </Cards>
+        </BoxMain>
     );
 }

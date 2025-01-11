@@ -7,7 +7,6 @@ export const BoxMain = styled.div`
   justify-content: center;
   width: 100%;
   /* height: 100vh; */
-  
 `;
 
 export const Cards = styled.div`
