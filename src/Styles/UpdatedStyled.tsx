@@ -58,12 +58,12 @@ export const CardFront = styled.div`
 
 `
 
-export const CardBack = styled.div`
+export const CardBack = styled.div<{firstup:boolean}>`
     position: absolute;
     width:100%;
     height:100%;
     backface-visibility: hidden;
-    background-color: white;
+    background-color: ${(props) => (props.firstup ? "white" : "red" )};
     color: black;
     display: flex;
     justify-content: center;
