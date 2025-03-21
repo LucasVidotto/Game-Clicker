@@ -1,50 +1,51 @@
-# React + TypeScript + Vite
+# 🕹️ Game Clicker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um simples jogo clicker para desenvolvimento.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📖 Descrição
 
-## Expanding the ESLint configuration
+Este projeto é um jogo do tipo **Clicker**, desenvolvido com o objetivo de aprimorar habilidades de programação e explorar tecnologias modernas.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+No jogo, os jogadores clicam em elementos para acumular pontos e desbloquear upgrades, proporcionando uma experiência de jogo contínua e envolvente.
 
-- Configure the top-level `parserOptions` property like this:
+---
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 🛠️ Tecnologias Utilizadas
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- **React**: Biblioteca JavaScript para construção de interfaces de usuário.
+- **TypeScript**: Superset do JavaScript que adiciona tipagem estática ao código.
+- **Vite**: Ferramenta de build rápida e leve para projetos web modernos.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- ## 📂 Estrutura do Projeto
+- Game-Clicker/
+├── public/               # Arquivos públicos (imagens, ícones, etc.)
+├── src/                  # Código-fonte principal
+│    ├── components/      # Componentes reutilizáveis
+│    ├── pages/           # Páginas da aplicação
+│    └── App.tsx          # Componente principal
+├── .gitignore            # Arquivos e pastas ignorados pelo Git
+├── README.md             # Documentação do projeto
+├── eslint.config.js      # Configurações do ESLint
+├── index.html            # Arquivo HTML principal
+├── package-lock.json     # Registro das versões exatas das dependências
+├── package.json          # Informações e dependências do projeto
+├── tsconfig.app.json     # Configurações específicas do TypeScript para app
+├── tsconfig.json         # Configurações gerais do TypeScript
+├── tsconfig.node.json    # Configurações do TypeScript para Node.js
+└── vite.config.ts        # Configurações do Vite
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## 🚀 Instalação e Execução
+
+Para rodar o projeto localmente, siga os passos abaixo:
+
+### ✅ Pré-requisitos:
+- **Node.js** (versão 18 ou superior)
+- **Git** instalado em sua máquina
+
+### 📌 Passos:
+
+1. **Clone o repositório:**
+   ```bash
+   git clone https://github.com/LucasVidotto/Game-Clicker.git
