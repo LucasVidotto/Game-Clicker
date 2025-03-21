@@ -20,9 +20,9 @@ No jogo, os jogadores clicam em elementos para acumular pontos e desbloquear upg
 
 - ## 📂 Estrutura do Projeto
 - Game-Clicker/
-├── public/               # Arquivos públicos (imagens, ícones, etc.)
-├── src/                  # Código-fonte principal
-│    ├── components/      # Componentes reutilizáveis
+├── public/               # Arquivos públicos (imagens, ícones, etc.)/n
+├── src/                  # Código-fonte principal/n
+│    ├── components/      # Componentes reutilizáveis/n
 │    ├── pages/           # Páginas da aplicação
 │    └── App.tsx          # Componente principal
 ├── .gitignore            # Arquivos e pastas ignorados pelo Git
