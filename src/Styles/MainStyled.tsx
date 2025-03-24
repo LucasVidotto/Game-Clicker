@@ -43,7 +43,7 @@ export const BarLife = styled.div<{ width: number }>`
   background: linear-gradient(145deg, #e11717, #950d0d);
   border-radius: 1.5rem 0 0 1.5rem;
   box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.4), inset -1px -1px 4px rgba(255, 255, 255, 0.1);
-  transition: width 0.3s ease-in-out;s
+  transition: width 0.3s ease-in-out;
 `;
 
 export const StyledTitle = styled.h2<{ isActive: boolean }>`

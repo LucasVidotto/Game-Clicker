@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import Main from "../Main";
 import "aos/dist/aos.css"; // Importa os estilos padrão do AOS
-import { CardBoxOne,CardBoxTow } from "../../Styles/CardsStyle";
+import { CardBoxOne,CardBoxTwo } from "../../Styles/CardsStyle";
 import GoldSys from "../../Components/Function/GoldSys";
 type PropsStatus ={
     status: boolean;
@@ -22,9 +22,9 @@ export default function Cards({status}: PropsStatus){
             <CardBoxOne data-aos="zoom-in"> 
                 <Main/> 
             </CardBoxOne> :
-            <CardBoxTow data-aos="zoom-in">
+            <CardBoxTwo data-aos="zoom-in">
                 <GoldSys />
-            </CardBoxTow>}  
+            </CardBoxTwo>}  
         </>
     )
 }
