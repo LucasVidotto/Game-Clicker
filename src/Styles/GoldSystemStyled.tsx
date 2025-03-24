@@ -1,5 +1,26 @@
 import styled, { keyframes } from "styled-components";
 
+const flowup = keyframes`
+  0%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100%{
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+`
+
+export const Particle = styled.div`
+  position:absolute;
+  color:gold;
+  font-size:1.8rem;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+  animation: ${flowup} 1s ease-out;
+  left: 50%;
+  transform: translateX(-50%);
+`
+
 // Animação de pulsar (efeito para destacar o card ativo)
 const pulseGlow = keyframes`
   0% { box-shadow: 0 0 12px rgba(255, 215, 0, 0.4); }
